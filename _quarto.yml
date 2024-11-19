@@ -1,0 +1,42 @@
+project:
+  type: book
+  output-dir: docs
+  
+book:
+  title: "OFICINA DE R AVANÇADO"
+  subtitle: "SEMEST UFPA 2024"
+  author: 
+    - name: "Rodrigo .M.T Graim"
+      id: md
+      orcid: 0000-0001-7262-3326
+      url: graimrodrigo@gmail.com
+      email: graimrodrigo@gmail.com
+      corresponding: true
+      affiliation: Faculdade de Estatística
+        - UFPA
+        
+  page-footer: 
+    left: |
+      Foi escrito por (GRAIM - 2024)
+    right: |
+      UFPA 2024.
+  search: true
+  repo-url: https://github.com/RODMTG/R_Semest_2024
+  downloads: [pdf, docx]
+  sharing: [twitter, facebook]
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: darkly
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

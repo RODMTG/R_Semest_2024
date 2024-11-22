@@ -1,0 +1,14 @@
+{
+  "hash": "7f43f6075357a70453f43e822f19b63c",
+  "result": {
+    "markdown": "```{=html}\n<style>\nbody{text-align: justify}\n</style>\n```\n\n\n:::: progress\n::: {.progress-bar style=\"width: 50%,; color: red;\"}\n:::\n::::\n\n# Análise Exploratória de dados\n\nEm estatística, a analise exploratoria de dados (AED) é uma abordagem a analise de conjuntos tal tal tal tal tal bla\n\n# Etapas Operacionais\n## Determinando o Diretório de Trabalho no R\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsetwd('C:/Users/Labes/Downloads/R minicurso/SEMEST_UFPA_2024')\n```\n:::\n\n\n## Leitura de Base de dados\n### Base de dados .xlsx\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readr)\nlibrary(readxl)\n\nmercado <- read_excel('mercado.xlsx')\nmercado\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n# A tibble: 80 × 6\n   EDUCAÇÃO   CARGO    LOCAL    IDADE TEMPOCASA SALARIO\n   <chr>      <chr>    <chr>    <dbl>     <dbl>   <dbl>\n 1 SECUNDÁRIO GERENTE  INTERIOR    30         1   4280.\n 2 SUPERIOR   AUXILIAR INTERIOR    32         4   4575.\n 3 SECUNDÁRIO AUXILIAR CAPITAL     33         2   4736.\n 4 SUPERIOR   GERENTE  INTERIOR    34         3   4863.\n 5 SECUNDÁRIO GERENTE  INTERIOR    36         1   5356.\n 6 SUPERIOR   AUXILIAR INTERIOR    37         1   4567.\n 7 SUPERIOR   AUXILIAR CAPITAL     37         0   4435.\n 8 SUPERIOR   AUXILIAR INTERIOR    37         6   4894.\n 9 SUPERIOR   AUXILIAR INTERIOR    38        13   5476.\n10 SECUNDÁRIO GERENTE  CAPITAL     38         8   5625.\n# ℹ 70 more rows\n```\n:::\n:::\n\n\n### Base de dados .csv\n\n\n::: {.cell}\n\n```{.r .cell-code}\nVendas_A = read.csv2(\"vendas.csv\")\nVendas_B = read.csv(\"vendas1.csv\")\n```\n:::\n\n\n\n\n:::: progress\n::: {.progress-bar style=\"width: 50%,\"}\n:::\n::::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

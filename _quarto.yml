@@ -1,7 +1,7 @@
 project:
   type: book
   output-dir: docs
-  
+
 book:
   title: "OFICINA DE R AVANÇADO"
   subtitle: "SEMEST UFPA 2024"
@@ -13,13 +13,13 @@ book:
       email: graimrodrigo@gmail.com
       corresponding: true
       affiliation: Faculdade de Estatística
+        - Estagiário
         - UFPA
-        
   page-footer: 
     left: |
       Foi escrito por (GRAIM - 2024)
     right: |
-      UFPA 2024.
+        UFPA 2024.
   search: true
   repo-url: https://github.com/RODMTG/R_Semest_2024
   downloads: [pdf, docx]

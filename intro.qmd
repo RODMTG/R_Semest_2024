@@ -1,9 +1,142 @@
-# Introduction
+```{=html}
+<style>
+body{text-align: justify}
+</style>
+```
+::: progress
+::: {.progress-bar style="width: 50%,; color: red;"}
+:::
+:::
 
-This is a book created from markdown and executable code.
+# Análise Exploratória de dados
 
-See @knuth84 for additional discussion of literate programming.
+Em estatística, a analise exploratoria de dados (AED) é uma abordagem a analise de conjuntos tal tal tal tal tal bla
+
+# Etapas Operacionais
+
+## Determinando o Diretório de Trabalho no R
+
+```{r dir1, message=FALSE, warning=FALSE}
+setwd('C:/Users/Labes/Downloads/R minicurso/SEMEST_UFPA_2024')
+```
+
+## Leitura de Base de dados
+
+### Base de dados .xlsx
+
+```{r base1, message=FALSE, warning=FALSE}
+library(readr)
+library(readxl)
+
+mercado <- read_excel('mercado.xlsx')
+mercado2 <- read_excel('mercado2.xlsx')
+
+grafico1 <- ggplot(mercado2, 
+       aes(x=IDADE, y=SALARIO)) +
+  geom_point(
+    size = 1.5,
+    pch = 21,
+    col = "black",
+    fill = "red"
+  ) +
+  geom_smooth( # reta de regrssão
+    method = "lm",
+    col = "red"
+    ) + 
+  labs( x = "IDADE",
+        y = "SALÁRIO",
+        title = "Diagrama de Dispersão Geral",
+        subtitle = "Renda Salarial")
+  
+ggplotly(grafico1)
+```
+
+```{r base1, message=FALSE, warning=FALSE}
+library(readr)
+library(readxl)
+
+mercado <- read_excel('mercado.xlsx')
+mercado2 <- read_excel('mercado2.xlsx')
+
+grafico1 <- ggplot(mercado2, 
+       aes(x=TEMPOCASA, y=SALARIO)) +
+  geom_point(
+    size = 1.5,
+    pch = 21,
+    col = "black",
+    fill = "red"
+  ) +
+  geom_smooth( # reta de regrssão
+    method = "lm",
+    col = "red"
+    ) + 
+  labs( x = "TEMPO DE CASA",
+        y = "SALÁRIO",
+        title = "Diagrama de Dispersão Geral",
+        subtitle = "Renda Salarial")
+  
+ggplotly(grafico1)
+```
 
 ```{r}
-1 + 1
+
+datatable(mercado2,
+          class = 'cell-border stripe',
+          editable = 'cell',
+          caption = 'Tabela 1. Base de dados sobre serviços',
+          colnames = c('ID','Cargo','Via','Idade','Tempo de Serviço','Salário'),
+          filter = 'top',
+          plugins = 'natural',
+          extensions = 'Buttons',
+          options=list(dom='Blfrtip',
+          buttons=c('copy','csv','excel','pdf','print')
+          ))
 ```
+
+
+### Base de dados .csv
+
+```{r base2, message=FALSE, warning=FALSE}
+
+Vendas_A = read.csv2("vendas.csv")
+Vendas_B = read.csv("vendas1.csv")
+
+```
+
+### PIPE
+
+```{r dplyria, message=FALSE, warning=FALSE}
+# principal pacote de manipulação de dados
+
+library(dplyr)
+
+Vendas_A %>%
+  select(filial, valor_compra, n_itens) %>% # Seleciona as variáveis
+  filter(filial == "B") %>%  # Filtra qual filial vai ser analisada
+  arrange(valor_compra) %>%  # Ordena por valor de compra
+  mutate(VM= valor_compra/n_itens) %>% # Cria o VM e faz uma operação diretamente
+  arrange(VM) # Ordena por VM
+
+```
+
+# Análise Exploratoria de Dados
+
+::: progress
+::: {.progress-bar style="width: 50%,"}
+:::
+:::
+
+|       DPLYR        |       GGPLOT2        |       SHINY        |
+|:------------------:|:--------------------:|:------------------:|
+| ![](www/dplyr.png) | ![](www/ggplot2.png) | ![](www/shiny.png) |
+
+: Ecossistema Tidyverse
+
+# Fórmula no Latex
+
+$$ Y_{1}^{2} = \alpha_{1} + \beta_{1} X_{1} + \beta{2} X_{2} + 
+\beta{3} X_{3} + \epsilon_{i}    $$
+
+# GEOBR PACOTE PARA FAZER MAPA
+
+
